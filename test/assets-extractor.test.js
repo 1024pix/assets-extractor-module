@@ -3,14 +3,14 @@ import {
   processAssets,
   extractAssetsUrls,
   slugifyPathname,
-  replaceAll,
+  replaceAll
 } from '../lib/module'
 
 import saveRemoteAsset from '../lib/save-remote-asset'
 
 jest.mock('../lib/save-remote-asset', () => ({
   __esModule: true,
-  default: jest.fn(),
+  default: jest.fn()
 }))
 
 describe('Module assets-extractor', () => {
