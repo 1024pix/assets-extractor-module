@@ -56,6 +56,23 @@ describe('Module assets-extractor', () => {
       expect(result).toEqual('<body><a href="/_assets/img.png">Link</a></body>')
     })
 
+    it('should replace html links with special chars', async () => {
+      // when
+      const result = await processAssets(
+        '<body><a href="https://test.com/img%281%29.png">Link</a></body>',
+        ['png'],
+        ['test.com'],
+        '/dir/_assets',
+        '/_assets'
+      )
+      expect(saveRemoteAsset).toHaveBeenCalledWith(
+        'https://test.com/img(1).png',
+        '/dir/_assets/img-1.png'
+      )
+      // then
+      expect(result).toEqual('<body><a href="/_assets/img-1.png">Link</a></body>')
+    })
+
     it('should download assets identified', async () => {
       // when
       await processAssets(
@@ -182,8 +199,19 @@ describe('Module assets-extractor', () => {
     it('should escape special chars in the searched string', () => {
       // when
       const result = replaceAll(
-        'start/\\?&%[]{}()_-end',
-        '/\\?&%[]{}()_-',
+        'start/\\?&%[]{}_-end',
+        '/\\?&%[]{}_-',
+        '-ok-'
+      )
+      // then
+      expect(result).toEqual('start-ok-end')
+    })
+
+    it('should replace parenthesis with entities', () => {
+      // when
+      const result = replaceAll(
+        'start/%28%29-end',
+        '/()-',
         '-ok-'
       )
       // then
