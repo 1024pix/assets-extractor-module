@@ -21,10 +21,10 @@
     "jest": "jest"
   },
   "dependencies": {
-    "@sindresorhus/slugify": "^2.1.0",
-    "fs-extra": "^10.0.0",
-    "get-urls": "^10.0.0",
-    "node-fetch": "^2.6.1"
+    "@sindresorhus/slugify": "^2.2.1",
+    "fs-extra": "^10.1.0",
+    "get-urls": "^10.0.1",
+    "node-fetch": "^2.7.0"
   },
   "devDependencies": {
     "@babel/core": "latest",
@@ -34,7 +34,7 @@
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
-    "babel-jest": "^27.0.6",
+    "babel-jest": "^27.5.1",
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
