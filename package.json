@@ -34,7 +34,7 @@
     "@nuxtjs/eslint-config": "latest",
     "@nuxtjs/module-test-utils": "latest",
     "babel-eslint": "latest",
-    "babel-jest": "^27.0.6",
+    "babel-jest": "^29.6.4",
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
